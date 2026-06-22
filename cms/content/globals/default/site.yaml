@@ -1,0 +1,16 @@
+site_title: 'Victory Church'
+tagline: 'You are here on purpose because you have a purpose.'
+contact_email: 'info@tnvictory.com'
+contact_phone: '+1 615-930-1222'
+address: '5383 Mount View Road, Antioch, TN 37013'
+footer_text: '© 2026 TN Victory Church. All Rights Reserved.'
+social_links:
+  -
+    service: Facebook
+    url: 'https://facebook.com/tnvictorychurch'
+  -
+    service: Instagram
+    url: 'https://instagram.com/tnvictorychurch'
+  -
+    service: YouTube
+    url: 'https://youtube.com/@TNVictoryChurch'

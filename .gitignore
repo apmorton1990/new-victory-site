@@ -1,0 +1,37 @@
+# ---- Node / Next.js (apps/web) ----
+node_modules/
+apps/web/.next/
+apps/web/out/
+apps/web/.turbo/
+next-env.d.ts
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Laravel / Statamic (cms) ----
+# (Flat-file CONTENT under cms/content is intentionally committed.)
+cms/vendor/
+cms/node_modules/
+cms/.env
+cms/.env.backup
+cms/.phpunit.result.cache
+cms/storage/framework/cache/data/*
+cms/storage/framework/sessions/*
+cms/storage/framework/testing/*
+cms/storage/framework/views/*
+cms/storage/logs/*
+cms/storage/*.key
+cms/bootstrap/cache/*.php
+cms/public/build/
+cms/public/hot
+cms/public/storage
+cms/auth.json
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

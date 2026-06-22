@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Victory Church brand tokens */
+@theme {
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #05142b; /* deep navy — nav, footer, hero */
+  --color-brand-light: #0a2547;
+  --color-accent: #176fc1; /* signature blue — buttons, links */
+  --color-accent-hover: #125a9e;
+  --color-mist: #eeeeee; /* light section background */
+}
+
+body {
+  font-family: var(--font-sans);
+}
