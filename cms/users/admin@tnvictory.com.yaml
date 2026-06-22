@@ -1,9 +1,0 @@
-super: true
-name: Admin
-id: 92e8f58d-224c-4a1a-9822-1525bf747697
-password_hash: $2y$12$4otb8CPA5D0O0RkYfs1nm.0t5sqY7C6A01LiBDtkNjFpCLvHh.5NC
-preferences:
-  collections:
-    pages:
-      view: list
-    listing_mode: grid
