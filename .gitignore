@@ -28,6 +28,10 @@ cms/public/build/
 cms/public/hot
 cms/public/storage
 cms/auth.json
+# Generated static site (output of `php please ssg:generate` — upload target)
+cms/storage/app/static/
+# Control-panel users (per-environment credentials, contain password hashes)
+cms/users/
 
 # ---- OS / editor ----
 .DS_Store

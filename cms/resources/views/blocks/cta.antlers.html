@@ -1,0 +1,9 @@
+<section class="{{ if style == 'dark' }}bg-brand text-white{{ elseif style == 'brand' }}bg-accent text-white{{ else }}bg-mist text-brand{{ /if }}">
+    <div class="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 py-16 text-center">
+        {{ if heading }}<h2 class="text-3xl font-bold">{{ heading }}</h2>{{ /if }}
+        {{ if text }}<p class="max-w-xl text-lg opacity-90">{{ text }}</p>{{ /if }}
+        {{ if button_label && button_url }}
+            <a href="{{ button_url }}" class="mt-2 inline-block rounded-full px-7 py-3 text-sm font-semibold transition {{ if style == 'light' }}bg-accent text-white hover:bg-accent-hover{{ else }}bg-white text-brand hover:bg-slate-200{{ /if }}">{{ button_label }}</a>
+        {{ /if }}
+    </div>
+</section>

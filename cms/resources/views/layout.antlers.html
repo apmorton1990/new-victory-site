@@ -2,14 +2,57 @@
 <html lang="{{ site:short_locale }}">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ (title ?? site:name) | sanitize }}</title>
+        <title>{{ seo_title ?? title ?? settings:site_title }} | {{ settings:site_title }}</title>
+        {{ if seo_description }}<meta name="description" content="{{ seo_description }}">{{ /if }}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
-    <body class="bg-zinc-100 dark:bg-zinc-900 font-sans leading-normal text-zinc-800 dark:text-zinc-400">
-        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+    <body class="min-h-screen flex flex-col bg-white text-brand font-sans antialiased">
+        <header class="sticky top-0 z-50 bg-brand text-white shadow-sm">
+            <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+                <a href="/" class="text-xl font-extrabold uppercase tracking-wide">{{ settings:site_title }}</a>
+                <nav class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium">
+                    {{ nav:main }}
+                        <a href="{{ url }}" class="text-slate-200 transition hover:text-white">{{ title }}</a>
+                    {{ /nav:main }}
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1">
             {{ template_content }}
-        </div>
+        </main>
+
+        <footer class="mt-auto bg-brand text-slate-300">
+            <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="space-y-3">
+                    <p class="text-lg font-extrabold uppercase tracking-wide text-white">{{ settings:site_title }}</p>
+                    {{ if settings:tagline }}<p class="text-sm leading-relaxed">{{ settings:tagline }}</p>{{ /if }}
+                </div>
+
+                <div class="space-y-2 text-sm">
+                    <p class="font-semibold uppercase tracking-wide text-white">Visit</p>
+                    {{ if settings:address }}<p>{{ settings:address }}</p>{{ /if }}
+                    {{ if settings:contact_phone }}<p><a href="tel:{{ settings:contact_phone }}" class="hover:text-white">{{ settings:contact_phone }}</a></p>{{ /if }}
+                    {{ if settings:contact_email }}<p><a href="mailto:{{ settings:contact_email }}" class="hover:text-white">{{ settings:contact_email }}</a></p>{{ /if }}
+                </div>
+
+                <nav class="flex flex-col gap-2 text-sm">
+                    <p class="font-semibold uppercase tracking-wide text-white">Explore</p>
+                    {{ nav:main }}<a href="{{ url }}" class="hover:text-white">{{ title }}</a>{{ /nav:main }}
+                </nav>
+
+                <nav class="flex flex-col gap-2 text-sm">
+                    <p class="font-semibold uppercase tracking-wide text-white">Connect</p>
+                    {{ settings:social_links }}<a href="{{ url }}" class="hover:text-white" target="_blank" rel="noreferrer">{{ service }}</a>{{ /settings:social_links }}
+                </nav>
+            </div>
+            <div class="border-t border-white/10 px-6 py-5 text-center text-xs text-slate-400">
+                {{ settings:footer_text }}
+            </div>
+        </footer>
     </body>
 </html>
