@@ -168,6 +168,10 @@ fields:
                         field: { type: text, width: 50 }
                       - handle: url
                         field: { type: text, width: 50 }
+                      - handle: text
+                        field: { type: markdown, instructions: 'Optional description (supports lists).' }
+                      - handle: button_label
+                        field: { type: text, instructions: 'Optional link text, e.g. "Learn More".' }
             image_text:
               display: 'Image + Text'
               icon: 'assets-image'
@@ -366,5 +370,54 @@ fields:
                   field:
                     type: button_group
                     default: '3'
+                    width: 50
+                    options: { '2': 2, '3': 3, '4': 4 }
+            promo_callout:
+              display: 'Promo / Announcement'
+              icon: star
+              instructions: 'Dated promo (camps, events) with detail lines and a button.'
+              fields:
+                - handle: heading
+                  field: { type: text, required: true }
+                - handle: subheading
+                  field: { type: textarea }
+                - handle: details
+                  field:
+                    type: grid
+                    mode: stacked
+                    fields:
+                      - handle: label
+                        field: { type: text, width: 50 }
+                      - handle: value
+                        field: { type: text, width: 50 }
+                - handle: image
+                  field: { type: assets, container: assets, max_files: 1, mode: grid }
+                - handle: button_label
+                  field: { type: text, width: 50 }
+                - handle: button_url
+                  field: { type: text, width: 50 }
+                - handle: background
+                  field:
+                    type: button_group
+                    default: brand
+                    options: { brand: Navy, accent: Blue, light: Light, dark: Dark }
+            resource_directory:
+              display: 'Resource Directory'
+              icon: 'list-ul'
+              instructions: 'Lists the Resources collection grouped by category (accordion).'
+              fields:
+                - handle: heading
+                  field: { type: text }
+            missionaries:
+              display: Missionaries
+              icon: globe
+              instructions: 'Grid from the Missionaries collection.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: columns
+                  field:
+                    type: button_group
+                    default: '2'
                     width: 50
                     options: { '2': 2, '3': 3, '4': 4 }

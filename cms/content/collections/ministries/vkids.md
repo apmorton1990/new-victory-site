@@ -15,6 +15,26 @@ page_builder:
     heading: 'VKids'
     subheading: 'Creating a safe, fun environment where kids encounter Jesus.'
   -
+    type: promo_callout
+    heading: 'VKids Summer Camp 2026'
+    subheading: 'A week your kids will never forget.'
+    details:
+      -
+        label: 'Dates'
+        value: 'June 21–24'
+      -
+        label: 'Grades'
+        value: '1st–5th'
+      -
+        label: 'Cost'
+        value: '$250'
+      -
+        label: 'Register by'
+        value: 'June 8'
+    button_label: 'Register Now'
+    button_url: '#'
+    background: accent
+  -
     type: text
     body: |
       ## Every Sunday

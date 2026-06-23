@@ -10,38 +10,47 @@ tree:
         title: 'Our Story'
         url: /our-story
       -
-        title: 'Events'
-        url: '#'
+        title: 'Mission & Vision'
+        url: /mission-and-vision
+      -
+        title: Events
+        url: /events
   -
     title: 'Next Steps'
     url: '#'
     children:
       -
         title: 'Growth Track'
-        url: '#'
+        url: /growth-track
       -
-        title: 'Get Connected'
-        url: '#'
+        title: 'Small Groups'
+        url: /small-groups
       -
-        title: 'Outreach'
-        url: '#'
+        title: 'Dream Teams'
+        url: /dream-teams
+      -
+        title: Baptism
+        url: /baptism
+      -
+        title: 'Child Dedication'
+        url: /child-dedication
   -
     title: 'Kids & Youth'
     url: '#'
     children:
       -
-        title: 'Next Generation'
-        url: '#'
+        title: VKids
+        url: /ministries/vkids
       -
         title: 'Relentless Youth'
-        url: '#'
+        url: /ministries/relentless-youth
   -
-    title: 'Support'
+    title: Support
     url: '#'
     children:
       -
-        title: 'Give Online'
-        url: '#'
-      -
         title: 'Care Resources'
-        url: '#'
+        url: /care-resources
+      -
+        title: 'Give Online'
+        url: /give

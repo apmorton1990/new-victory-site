@@ -1,5 +1,52 @@
 tree:
-  - id: 096b6ebe-782f-4c43-8e76-d73dbf09fbf3
-    entry: plan-a-visit
-  - id: 0f8f108b-01dc-4d13-9365-9665eb74fa4f
-    entry: our-story
+  -
+    title: 'Plan a Visit'
+    url: /plan-a-visit
+  -
+    title: 'Who We Are'
+    url: '#'
+    children:
+      -
+        title: 'Our Story'
+        url: /our-story
+      -
+        title: 'Mission & Vision'
+        url: /mission-and-vision
+      -
+        title: Outreach
+        url: /outreach
+  -
+    title: 'Get Connected'
+    url: '#'
+    children:
+      -
+        title: 'Growth Track'
+        url: /growth-track
+      -
+        title: 'Small Groups'
+        url: /small-groups
+      -
+        title: 'Dream Teams'
+        url: /dream-teams
+      -
+        title: Baptism
+        url: /baptism
+      -
+        title: 'Child Dedication'
+        url: /child-dedication
+  -
+    title: 'Next Generation'
+    url: '#'
+    children:
+      -
+        title: VKids
+        url: /ministries/vkids
+      -
+        title: 'Relentless Youth'
+        url: /ministries/relentless-youth
+  -
+    title: Events
+    url: /events
+  -
+    title: Give
+    url: /give

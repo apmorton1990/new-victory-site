@@ -1,0 +1,29 @@
+title: Missionary
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: title
+            field:
+              type: text
+              display: Name
+              required: true
+              validate:
+                - required
+          - handle: region
+            field:
+              type: text
+          - handle: photo
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              mode: grid
+          - handle: bio
+            field:
+              type: textarea
+          - handle: link
+            field:
+              type: text
+              instructions: 'Optional link to learn more or support.'

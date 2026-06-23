@@ -54,6 +54,26 @@ page_builder:
     type: location_map
     heading: 'Find us'
   -
+    type: feature_cards
+    heading: 'Take your next step'
+    columns: '3'
+    cards:
+      -
+        title: 'Plan a Visit'
+        url: /plan-a-visit
+        text: 'Know what to expect on your first Sunday.'
+        button_label: 'Learn More'
+      -
+        title: 'Get Baptized'
+        url: '#'
+        text: 'Take your public step of faith.'
+        button_label: 'Sign Up'
+      -
+        title: 'Join a Group'
+        url: '#'
+        text: 'Find real community throughout the week.'
+        button_label: 'Explore Groups'
+  -
     type: video
     heading: 'Welcome to Victory'
     video_url: 'https://www.youtube.com/watch?v=aqz-KE-bpKQ'

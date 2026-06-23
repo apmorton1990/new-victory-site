@@ -16,9 +16,23 @@
                 <a href="/" class="text-xl font-extrabold uppercase tracking-wide">{{ settings:site_title }}</a>
 
                 {{# Desktop navigation #}}
-                <nav class="hidden items-center gap-x-6 text-sm font-medium lg:flex">
+                <nav class="hidden items-center gap-x-1 text-sm font-medium lg:flex">
                     {{ nav:main }}
-                        <a href="{{ url }}" class="text-slate-200 transition hover:text-white">{{ title }}</a>
+                        {{ if children }}
+                            <div class="group relative">
+                                <button type="button" class="flex items-center gap-1 px-3 py-2 text-slate-200 transition hover:text-white">
+                                    {{ title }}
+                                    <svg class="h-4 w-4 transition group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" /></svg>
+                                </button>
+                                <div class="invisible absolute left-0 top-full z-50 min-w-52 rounded-md bg-white py-2 text-brand opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                                    {{ children }}
+                                        <a href="{{ url }}" class="block px-4 py-2 transition hover:bg-mist hover:text-accent">{{ title }}</a>
+                                    {{ /children }}
+                                </div>
+                            </div>
+                        {{ else }}
+                            <a href="{{ url }}" class="px-3 py-2 text-slate-200 transition hover:text-white">{{ title }}</a>
+                        {{ /if }}
                     {{ /nav:main }}
                 </nav>
 
@@ -44,7 +58,14 @@
             <nav id="mobile-nav" class="hidden border-t border-white/10 lg:hidden">
                 <div class="space-y-1 px-6 py-4 text-sm font-medium">
                     {{ nav:main }}
-                        <a href="{{ url }}" class="block rounded-md px-2 py-2 text-slate-200 transition hover:bg-white/10 hover:text-white">{{ title }}</a>
+                        {{ if children }}
+                            <p class="px-2 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-400">{{ title }}</p>
+                            {{ children }}
+                                <a href="{{ url }}" class="block rounded-md px-4 py-2 text-slate-200 transition hover:bg-white/10 hover:text-white">{{ title }}</a>
+                            {{ /children }}
+                        {{ else }}
+                            <a href="{{ url }}" class="block rounded-md px-2 py-2 text-slate-200 transition hover:bg-white/10 hover:text-white">{{ title }}</a>
+                        {{ /if }}
                     {{ /nav:main }}
                 </div>
             </nav>

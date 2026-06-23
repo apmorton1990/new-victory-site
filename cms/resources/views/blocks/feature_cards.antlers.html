@@ -2,14 +2,18 @@
     {{ if heading }}<h2 class="mb-10 text-center text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
     <div class="grid grid-cols-1 gap-6 {{ if columns == '2' }}sm:grid-cols-2{{ elseif columns == '4' }}sm:grid-cols-2 lg:grid-cols-4{{ else }}sm:grid-cols-2 lg:grid-cols-3{{ /if }}">
         {{ cards }}
-            <a href="{{ url }}" class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
+            {{ if url }}<a href="{{ url }}" class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">{{ else }}<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">{{ /if }}
                 {{ if image }}
                     {{ image }}<img src="{{ url }}" alt="" class="aspect-[4/3] w-full object-cover">{{ /image }}
                 {{ else }}
                     <div class="aspect-[4/3] w-full bg-mist"></div>
                 {{ /if }}
-                <span class="p-5 text-lg font-semibold text-brand group-hover:text-accent">{{ title }}</span>
-            </a>
+                <div class="flex flex-1 flex-col gap-2 p-5">
+                    <h3 class="text-lg font-semibold text-brand {{ if url }}group-hover:text-accent{{ /if }}">{{ title }}</h3>
+                    {{ if text }}<div class="prose prose-sm prose-slate max-w-none text-slate-600 prose-a:text-accent">{{ text }}</div>{{ /if }}
+                    {{ if button_label }}<span class="mt-auto pt-3 text-sm font-semibold text-accent {{ if url }}group-hover:text-accent-hover{{ /if }}">{{ button_label }} &rarr;</span>{{ /if }}
+                </div>
+            {{ if url }}</a>{{ else }}</div>{{ /if }}
         {{ /cards }}
     </div>
 </section>

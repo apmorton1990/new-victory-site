@@ -10,6 +10,13 @@ page_builder:
     type: hero
     heading: 'Plan a Visit'
     subheading: "We can't wait to meet you. Here's what to expect on your first Sunday."
+    alignment: center
+    text_color: white
+    background_type: image
+    background_image:
+      - hero-visit.jpg
+    overlay: dark
+    height: large
   -
     type: text
     body: |
