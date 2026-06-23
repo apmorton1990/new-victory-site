@@ -119,6 +119,13 @@ fields:
               fields:
                 - handle: body
                   field: { type: markdown }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             image:
               display: Image
               icon: assets
@@ -127,6 +134,13 @@ fields:
                   field: { type: assets, container: assets, max_files: 1, mode: grid }
                 - handle: caption
                   field: { type: text }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             cta:
               display: 'Call to Action'
               icon: link
@@ -172,6 +186,13 @@ fields:
                         field: { type: markdown, instructions: 'Optional description (supports lists).' }
                       - handle: button_label
                         field: { type: text, instructions: 'Optional link text, e.g. "Learn More".' }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             image_text:
               display: 'Image + Text'
               icon: 'assets-image'
@@ -193,6 +214,13 @@ fields:
                   field: { type: text, width: 50 }
                 - handle: button_url
                   field: { type: text, width: 50 }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             accordion:
               display: 'Accordion / FAQ'
               icon: 'list-ul'
@@ -208,6 +236,13 @@ fields:
                         field: { type: text }
                       - handle: answer
                         field: { type: textarea }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             feature_list:
               display: 'Feature List'
               icon: 'list-ul'
@@ -224,6 +259,13 @@ fields:
                     fields:
                       - handle: text
                         field: { type: text }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             leaders_feature:
               display: 'Leaders Feature'
               icon: user
@@ -252,6 +294,13 @@ fields:
                   field: { type: text, instructions: 'Paste a YouTube or Vimeo link.' }
                 - handle: caption
                   field: { type: text }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             button_group:
               display: 'Button Group'
               icon: link
@@ -272,6 +321,13 @@ fields:
                           type: button_group
                           default: primary
                           options: { primary: Primary, secondary: Secondary }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             embed:
               display: 'Embed / HTML'
               icon: code
@@ -281,6 +337,13 @@ fields:
                   field: { type: text }
                 - handle: code
                   field: { type: code, mode: htmlmixed }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             steps:
               display: Steps
               icon: 'list-ol'
@@ -299,6 +362,13 @@ fields:
                         field: { type: text }
                       - handle: description
                         field: { type: textarea }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             tiers:
               display: Tiers
               icon: 'list-ul'
@@ -317,6 +387,13 @@ fields:
                         field: { type: text }
                       - handle: description
                         field: { type: textarea }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             gallery:
               display: Gallery
               icon: 'assets-image'
@@ -332,6 +409,13 @@ fields:
                     options: { '2': 2, '3': 3, '4': 4 }
                 - handle: images
                   field: { type: assets, container: assets, mode: grid }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             quote:
               display: Quote
               icon: 'quote'
@@ -352,6 +436,13 @@ fields:
                   field: { type: text }
                 - handle: embed_code
                   field: { type: code, mode: htmlmixed, instructions: 'Optional: paste a Google Maps embed iframe.' }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             service_times:
               display: 'Service Times'
               icon: calendar
@@ -372,6 +463,13 @@ fields:
                     default: '3'
                     width: 50
                     options: { '2': 2, '3': 3, '4': 4 }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             promo_callout:
               display: 'Promo / Announcement'
               icon: star
@@ -408,6 +506,13 @@ fields:
               fields:
                 - handle: heading
                   field: { type: text }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }
             missionaries:
               display: Missionaries
               icon: globe
@@ -421,3 +526,10 @@ fields:
                     default: '2'
                     width: 50
                     options: { '2': 2, '3': 3, '4': 4 }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Section background'
+                    default: default
+                    width: 50
+                    options: { default: Default, mist: Light, brand: Navy }

@@ -33,6 +33,7 @@ page_builder:
 
       5383 Mount View Road, Antioch, Tennessee 37013
     enabled: true
+    background: brand
   -
     id: QQySfqAv
     type: feature_cards
@@ -58,6 +59,7 @@ page_builder:
         title: Outreach
         url: '#'
     enabled: true
+    background: mist
   - id: MwJXXiP7
     type: leaders_feature
     heading: 'Meet Our Leaders'
@@ -97,5 +99,5 @@ page_builder:
     style: brand
     enabled: true
 updated_by: 92e8f58d-224c-4a1a-9822-1525bf747697
-updated_at: 1782230288
+updated_at: 1782242993
 ---

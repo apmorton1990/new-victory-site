@@ -21,6 +21,7 @@ page_builder:
     type: feature_cards
     heading: 'Find your next step'
     columns: '3'
+    background: mist
     cards:
       -
         title: 'Growth Track'

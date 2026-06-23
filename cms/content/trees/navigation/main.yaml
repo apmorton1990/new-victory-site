@@ -1,52 +1,55 @@
 tree:
-  -
+  - id: 1ca6ac5c-8860-4cf2-9952-3492780a9d70
     title: 'Plan a Visit'
     url: /plan-a-visit
   -
+    id: 7cf29abe-2cea-425f-bbce-9f06ba007c46
     title: 'Who We Are'
     url: '#'
     children:
-      -
+      - id: 896f4478-7f0b-4a59-8aa7-acbb3928494c
         title: 'Our Story'
         url: /our-story
-      -
+      - id: e5a364d3-0b5e-45ba-a442-b4fdf571c793
         title: 'Mission & Vision'
         url: /mission-and-vision
-      -
+      - id: 6af7f235-4ebc-451c-b9b8-a5e14092e4af
         title: Outreach
         url: /outreach
   -
+    id: 24708ba9-5e7c-422d-88bd-ca6c05e2966a
     title: 'Get Connected'
     url: '#'
     children:
-      -
+      - id: 4b1489d7-3c7c-4707-b3b1-5e727e8e1bac
         title: 'Growth Track'
         url: /growth-track
-      -
+      - id: 2206d89d-8e60-46a5-bcc4-7f14404832ef
         title: 'Small Groups'
         url: /small-groups
-      -
+      - id: 4172a169-f9d3-4cc1-9e0a-6aee60a59497
         title: 'Dream Teams'
         url: /dream-teams
-      -
+      - id: 201b670c-7548-4ab2-86e8-19233af870b8
         title: Baptism
         url: /baptism
-      -
+      - id: 6f307169-883d-4b15-8ce1-1aab1ea16318
         title: 'Child Dedication'
         url: /child-dedication
   -
+    id: f63beb22-c853-4809-8cd2-65d0b5e62b55
     title: 'Next Generation'
     url: '#'
     children:
-      -
+      - id: 5dcb0c83-2995-4751-a16e-272eb4f83292
         title: VKids
         url: /ministries/vkids
-      -
+      - id: 176bd665-419e-4d09-a757-868e697b06d5
         title: 'Relentless Youth'
         url: /ministries/relentless-youth
-  -
+  - id: c31a4982-0c7d-4f34-9b50-af7f815f0747
     title: Events
     url: /events
-  -
+  - id: c6bcd02d-6c99-48c3-b975-c09d9d61d961
     title: Give
     url: /give

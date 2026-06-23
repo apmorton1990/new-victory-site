@@ -25,8 +25,9 @@ page_builder:
       Everything we do flows out of four commitments — how we grow, guide, give, and go.
   -
     type: feature_cards
-    heading: ''
+    heading: 'The 4 G''s'
     columns: '4'
+    background: brand
     cards:
       -
         title: GROW

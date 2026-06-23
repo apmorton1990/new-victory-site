@@ -1,6 +1,8 @@
-<section class="mx-auto max-w-4xl px-6 py-12">
-    {{ if heading }}<h2 class="mb-6 text-center text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
-    <div class="embed-content">
-        {{ code:code }}
+<section class="{{ if background == 'mist' }}bg-mist{{ elseif background == 'brand' }}bg-brand{{ /if }}">
+    <div class="mx-auto max-w-4xl px-6 py-12">
+        {{ if heading }}<h2 class="mb-6 text-center text-3xl font-bold {{ if background == 'brand' }}text-white{{ else }}text-brand{{ /if }}">{{ heading }}</h2>{{ /if }}
+        <div class="embed-content">
+            {{ code:code }}
+        </div>
     </div>
 </section>

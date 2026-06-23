@@ -1,14 +1,16 @@
-<section class="mx-auto max-w-3xl px-6 py-16">
-    {{ if heading }}<h2 class="mb-8 text-center text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
-    <div class="divide-y divide-slate-200 rounded-xl border border-slate-200">
-        {{ items }}
-            <details class="group px-5 py-4">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-brand">
-                    {{ question }}
-                    <span class="ml-4 text-accent transition group-open:rotate-45">+</span>
-                </summary>
-                <div class="mt-3 text-slate-600">{{ answer | nl2br }}</div>
-            </details>
-        {{ /items }}
+<section class="{{ if background == 'mist' }}bg-mist{{ elseif background == 'brand' }}bg-brand{{ /if }}">
+    <div class="mx-auto max-w-3xl px-6 py-16">
+        {{ if heading }}<h2 class="mb-8 text-center text-3xl font-bold {{ if background == 'brand' }}text-white{{ else }}text-brand{{ /if }}">{{ heading }}</h2>{{ /if }}
+        <div class="divide-y rounded-xl border {{ if background == 'brand' }}divide-white/15 border-white/15{{ else }}divide-slate-200 border-slate-200{{ /if }}">
+            {{ items }}
+                <details class="group px-5 py-4">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-semibold {{ if background == 'brand' }}text-white{{ else }}text-brand{{ /if }}">
+                        {{ question }}
+                        <span class="ml-4 text-accent transition group-open:rotate-45">+</span>
+                    </summary>
+                    <div class="mt-3 {{ if background == 'brand' }}text-slate-200{{ else }}text-slate-600{{ /if }}">{{ answer | nl2br }}</div>
+                </details>
+            {{ /items }}
+        </div>
     </div>
 </section>

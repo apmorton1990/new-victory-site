@@ -47,6 +47,7 @@ page_builder:
     type: team_grid
     heading: 'Meet our team'
     columns: '3'
+    background: mist
   -
     type: service_times
     heading: 'Join us this Sunday'
