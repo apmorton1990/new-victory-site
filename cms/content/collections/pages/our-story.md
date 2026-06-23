@@ -8,8 +8,20 @@ seo_description: 'How Victory Church started, where we are today, and where we a
 page_builder:
   -
     type: hero
-    heading: 'Our Story'
-    subheading: 'Helping people live a victorious life through being devoted followers of Jesus Christ.'
+    heading: 'You are here on purpose because you have a purpose'
+    subheading: 'Helping people live a VICTORIOUS LIFE through being a devoted follower of Jesus Christ.'
+    eyebrow: 'Our Story'
+    alignment: left
+    text_size: xlarge
+    text_color: white
+    background_type: image
+    background_image:
+      - worship.jpg
+    overlay: gradient_left
+    heading_color: blue
+    heading_uppercase: true
+    height: large
+    content_width: half
   -
     type: image_text
     heading: 'How it all started'

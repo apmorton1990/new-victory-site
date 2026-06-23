@@ -24,6 +24,94 @@ fields:
                   field: { type: text, width: 50 }
                 - handle: button_url
                   field: { type: text, width: 50 }
+                - handle: alignment
+                  field:
+                    type: button_group
+                    display: 'Text alignment'
+                    default: center
+                    width: 33
+                    options: { left: Left, center: Center, right: Right }
+                - handle: text_size
+                  field:
+                    type: button_group
+                    display: 'Text size'
+                    default: large
+                    width: 33
+                    options: { small: S, medium: M, large: L, xlarge: XL }
+                - handle: text_color
+                  field:
+                    type: button_group
+                    display: 'Text color'
+                    default: white
+                    width: 33
+                    options: { white: White, brand: Navy, dark: Dark, accent: Blue }
+                - handle: background
+                  field:
+                    type: button_group
+                    display: 'Background color'
+                    default: brand
+                    width: 50
+                    options: { brand: Navy, light: Light, mist: Mist, accent: Blue }
+                - handle: background_type
+                  field:
+                    type: button_group
+                    display: 'Background type'
+                    default: color
+                    width: 50
+                    options: { color: Color, image: Image }
+                - handle: background_image
+                  field:
+                    type: assets
+                    container: assets
+                    max_files: 1
+                    mode: grid
+                    if: { background_type: 'equals image' }
+                - handle: overlay
+                  field:
+                    type: button_group
+                    display: 'Image overlay'
+                    default: gradient_left
+                    options: { none: None, dark: Dark, darker: Darker, gradient_left: 'Gradient (left)', gradient_bottom: 'Gradient (bottom)', brand: Brand }
+                    if: { background_type: 'equals image' }
+                - handle: height
+                  field:
+                    type: button_group
+                    display: Height
+                    default: auto
+                    width: 50
+                    options: { auto: Auto, medium: Medium, large: Large, full: 'Full screen' }
+                - handle: content_width
+                  field:
+                    type: button_group
+                    display: 'Content width'
+                    default: wide
+                    width: 50
+                    options: { narrow: Narrow, half: Half, wide: Wide }
+                - handle: eyebrow
+                  field:
+                    type: text
+                    display: Eyebrow
+                    instructions: 'Small label shown above the heading.'
+                - handle: heading_color
+                  field:
+                    type: button_group
+                    display: 'Heading color'
+                    default: inherit
+                    options: { inherit: Auto, white: White, navy: Navy, blue: Blue, gold: Gold, custom: Custom }
+                - handle: heading_color_custom
+                  field:
+                    type: color
+                    display: 'Custom heading color'
+                    if: { heading_color: 'equals custom' }
+                - handle: heading_uppercase
+                  field:
+                    type: toggle
+                    display: 'Uppercase heading'
+                    default: false
+                - handle: secondary_button_label
+                  field: { type: text, display: 'Secondary button label', width: 50 }
+                - handle: secondary_button_url
+                  field: { type: text, display: 'Secondary button URL', width: 50 }
             text:
               display: Text
               icon: text

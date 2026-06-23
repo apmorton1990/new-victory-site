@@ -1,9 +1,38 @@
-<section class="bg-brand text-white">
-    <div class="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 py-32 text-center">
-        <h1 class="text-4xl font-extrabold tracking-tight sm:text-6xl">{{ heading }}</h1>
-        {{ if subheading }}<p class="max-w-2xl text-lg text-slate-200">{{ subheading }}</p>{{ /if }}
-        {{ if button_label && button_url }}
-            <a href="{{ button_url }}" class="mt-2 inline-block rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover">{{ button_label }}</a>
+<section class="relative isolate overflow-hidden {{ if background == 'light' }}bg-white{{ elseif background == 'mist' }}bg-mist{{ elseif background == 'accent' }}bg-accent{{ else }}bg-brand{{ /if }} {{ if text_color == 'brand' }}text-brand{{ elseif text_color == 'dark' }}text-slate-800{{ elseif text_color == 'accent' }}text-accent{{ else }}text-white{{ /if }} {{ if height == 'medium' }}min-h-[60vh]{{ elseif height == 'large' }}min-h-[80vh]{{ elseif height == 'full' }}min-h-screen{{ /if }} flex flex-col justify-center">
+
+    {{ if background_type == 'image' }}
+        {{ background_image }}
+            <img src="{{ url }}" alt="" class="absolute inset-0 -z-20 h-full w-full object-cover" style="object-position: {{ focus_css }}">
+        {{ /background_image }}
+        {{ if overlay == 'dark' }}<div class="absolute inset-0 -z-10 bg-black/50"></div>
+        {{ elseif overlay == 'darker' }}<div class="absolute inset-0 -z-10 bg-black/70"></div>
+        {{ elseif overlay == 'gradient_left' }}<div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        {{ elseif overlay == 'gradient_bottom' }}<div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 to-transparent"></div>
+        {{ elseif overlay == 'brand' }}<div class="absolute inset-0 -z-10 bg-brand/70"></div>
         {{ /if }}
+    {{ /if }}
+
+    <div class="mx-auto flex w-full max-w-7xl flex-col px-6 py-24 {{ if alignment == 'left' }}items-start text-left{{ elseif alignment == 'right' }}items-end text-right{{ else }}items-center text-center{{ /if }}">
+        <div class="flex flex-col gap-6 {{ if content_width == 'narrow' }}max-w-xl{{ elseif content_width == 'half' }}max-w-2xl{{ else }}max-w-4xl{{ /if }}">
+            {{ if eyebrow }}<p class="text-sm font-semibold uppercase tracking-widest opacity-90">{{ eyebrow }}</p>{{ /if }}
+
+            <h1
+                class="font-extrabold tracking-tight {{ if heading_uppercase }}uppercase{{ /if }} {{ if text_size == 'small' }}text-2xl sm:text-3xl{{ elseif text_size == 'medium' }}text-3xl sm:text-4xl{{ elseif text_size == 'xlarge' }}text-5xl sm:text-7xl{{ else }}text-4xl sm:text-6xl{{ /if }} {{ if heading_color == 'white' }}text-white{{ elseif heading_color == 'navy' }}text-brand{{ elseif heading_color == 'blue' }}text-accent{{ elseif heading_color == 'gold' }}text-amber-400{{ /if }}"
+                {{ if heading_color == 'custom' }}style="color: {{ heading_color_custom }}"{{ /if }}
+            >{{ heading }}</h1>
+
+            {{ if subheading }}<p class="max-w-2xl text-lg opacity-90">{{ subheading }}</p>{{ /if }}
+
+            {{ if button_label || secondary_button_label }}
+                <div class="mt-2 flex flex-wrap gap-4 {{ if alignment == 'center' }}justify-center{{ elseif alignment == 'right' }}justify-end{{ /if }}">
+                    {{ if button_label && button_url }}
+                        <a href="{{ button_url }}" class="inline-block rounded-full px-7 py-3 text-sm font-semibold transition {{ if background == 'accent' }}bg-white text-brand hover:bg-slate-200{{ else }}bg-accent text-white hover:bg-accent-hover{{ /if }}">{{ button_label }}</a>
+                    {{ /if }}
+                    {{ if secondary_button_label && secondary_button_url }}
+                        <a href="{{ secondary_button_url }}" class="inline-block rounded-full border border-current px-7 py-3 text-sm font-semibold transition hover:opacity-80">{{ secondary_button_label }}</a>
+                    {{ /if }}
+                </div>
+            {{ /if }}
+        </div>
     </div>
 </section>
