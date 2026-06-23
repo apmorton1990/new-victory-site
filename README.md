@@ -53,10 +53,34 @@ php artisan serve             # Statamic at http://127.0.0.1:8000
 - **Site preview:** http://127.0.0.1:8000
 - **Control panel:** http://127.0.0.1:8000/cp — where the team builds pages
 
-The `pages` collection has a **page builder** (`page_builder` Replicator) with
-block "sets": **Hero, Text, Image, Call to Action**. Each set maps to an Antlers
-partial in `cms/resources/views/blocks/`. Site-wide settings live in the
-**Settings** global; menus in the **Main** navigation.
+### Collections
+
+- **pages** — marketing pages, built with the page builder. Home renders at `/`.
+- **ministries** — VKids, Relentless Youth, etc. Reuse the same page builder and
+  route at `/ministries/{slug}`, plus meta fields (summary, image, age range, leader).
+- **staff** — team members (name, role, photo, bio); surfaced by the `team_grid` block.
+
+### Page builder
+
+The `page_builder` field is a shared **fieldset** (`cms/resources/fieldsets/page_builder.yaml`)
+imported by both `pages` and `ministries`. Each block "set" maps to an Antlers
+partial in `cms/resources/views/blocks/`:
+
+- **Layout/content:** hero, text, image, cta, feature_cards, image_text,
+  accordion, feature_list, steps, tiers, button_group
+- **Media:** video (YouTube/Vimeo), gallery, embed (raw HTML — Church Center / Mailchimp / maps)
+- **Church-specific:** leaders_feature, team_grid (pulls the `staff` collection),
+  service_times + location_map (pull the Service Info global), quote
+
+### Globals & navigation
+
+- **Settings** — site title, contact, socials, footer text.
+- **Service Info** — service times, schedule note, address, map link (used by the
+  `service_times` and `location_map` blocks).
+- Menus come from the **Main** and **Footer** navigations.
+
+> **Adding a block type:** add a set to `resources/fieldsets/page_builder.yaml`
+> and a matching partial `resources/views/blocks/{type}.antlers.html`.
 
 ## Building & deploying the static site
 
@@ -72,12 +96,6 @@ no database, no SSH needed on the host.
 
 > **Production base URL:** set `APP_URL` in `cms/.env` (or the SSG `base_url`
 > config) to the live domain before generating, so links/assets resolve.
-
-### Adding a new block type
-
-1. Add a set under `page_builder` in
-   `cms/resources/blueprints/collections/pages/pages.yaml`.
-2. Add a matching partial `cms/resources/views/blocks/{type}.antlers.html`.
 
 ## Planning Center
 

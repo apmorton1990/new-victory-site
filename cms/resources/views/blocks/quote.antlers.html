@@ -1,0 +1,10 @@
+<section class="bg-mist">
+    <figure class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 py-20 text-center">
+        <blockquote class="text-2xl font-medium leading-relaxed text-brand sm:text-3xl">&ldquo;{{ quote }}&rdquo;</blockquote>
+        {{ if attribution }}
+            <figcaption class="text-sm text-slate-500">
+                <span class="font-semibold text-brand">{{ attribution }}</span>{{ if role }} &middot; {{ role }}{{ /if }}
+            </figcaption>
+        {{ /if }}
+    </figure>
+</section>

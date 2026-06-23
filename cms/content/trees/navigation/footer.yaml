@@ -1,0 +1,47 @@
+tree:
+  -
+    title: 'Visit & About'
+    url: '#'
+    children:
+      -
+        title: 'Plan a Visit'
+        url: /plan-a-visit
+      -
+        title: 'Our Story'
+        url: /our-story
+      -
+        title: 'Events'
+        url: '#'
+  -
+    title: 'Next Steps'
+    url: '#'
+    children:
+      -
+        title: 'Growth Track'
+        url: '#'
+      -
+        title: 'Get Connected'
+        url: '#'
+      -
+        title: 'Outreach'
+        url: '#'
+  -
+    title: 'Kids & Youth'
+    url: '#'
+    children:
+      -
+        title: 'Next Generation'
+        url: '#'
+      -
+        title: 'Relentless Youth'
+        url: '#'
+  -
+    title: 'Support'
+    url: '#'
+    children:
+      -
+        title: 'Give Online'
+        url: '#'
+      -
+        title: 'Care Resources'
+        url: '#'

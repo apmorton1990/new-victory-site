@@ -1,0 +1,15 @@
+<section class="mx-auto max-w-4xl px-6 py-16">
+    {{ if heading }}<h2 class="text-center text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
+    {{ if intro }}<p class="mt-3 text-center text-slate-600">{{ intro }}</p>{{ /if }}
+    <ol class="mt-10 space-y-8">
+        {{ items }}
+            <li class="flex gap-5">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-lg font-bold text-white">{{ index }}</span>
+                <div>
+                    <h3 class="text-xl font-semibold text-brand">{{ title }}</h3>
+                    {{ if description }}<p class="mt-1 text-slate-600">{{ description | nl2br }}</p>{{ /if }}
+                </div>
+            </li>
+        {{ /items }}
+    </ol>
+</section>

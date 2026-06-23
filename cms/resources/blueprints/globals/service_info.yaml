@@ -1,0 +1,25 @@
+title: 'Service Info'
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: schedule_note
+            field:
+              type: text
+              instructions: 'e.g. "Every Sunday"'
+          - handle: service_times
+            field:
+              type: grid
+              mode: stacked
+              fields:
+                - handle: time
+                  field:
+                    type: text
+          - handle: address
+            field:
+              type: textarea
+          - handle: map_url
+            field:
+              type: text
+              instructions: 'Google Maps link for the "Get Directions" button.'

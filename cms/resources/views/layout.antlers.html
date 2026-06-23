@@ -27,28 +27,25 @@
         </main>
 
         <footer class="mt-auto bg-brand text-slate-300">
-            <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
-                <div class="space-y-3">
+            <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-6">
+                <div class="space-y-3 lg:col-span-2">
                     <p class="text-lg font-extrabold uppercase tracking-wide text-white">{{ settings:site_title }}</p>
                     {{ if settings:tagline }}<p class="text-sm leading-relaxed">{{ settings:tagline }}</p>{{ /if }}
+                    {{ if service_info:address }}<p class="text-sm">{{ service_info:address }}</p>{{ /if }}
+                    {{ if settings:contact_phone }}<p class="text-sm"><a href="tel:{{ settings:contact_phone }}" class="hover:text-white">{{ settings:contact_phone }}</a></p>{{ /if }}
+                    <div class="flex flex-wrap gap-4 pt-2 text-sm">
+                        {{ settings:social_links }}<a href="{{ url }}" class="hover:text-white" target="_blank" rel="noreferrer">{{ service }}</a>{{ /settings:social_links }}
+                    </div>
                 </div>
 
-                <div class="space-y-2 text-sm">
-                    <p class="font-semibold uppercase tracking-wide text-white">Visit</p>
-                    {{ if settings:address }}<p>{{ settings:address }}</p>{{ /if }}
-                    {{ if settings:contact_phone }}<p><a href="tel:{{ settings:contact_phone }}" class="hover:text-white">{{ settings:contact_phone }}</a></p>{{ /if }}
-                    {{ if settings:contact_email }}<p><a href="mailto:{{ settings:contact_email }}" class="hover:text-white">{{ settings:contact_email }}</a></p>{{ /if }}
-                </div>
-
-                <nav class="flex flex-col gap-2 text-sm">
-                    <p class="font-semibold uppercase tracking-wide text-white">Explore</p>
-                    {{ nav:main }}<a href="{{ url }}" class="hover:text-white">{{ title }}</a>{{ /nav:main }}
-                </nav>
-
-                <nav class="flex flex-col gap-2 text-sm">
-                    <p class="font-semibold uppercase tracking-wide text-white">Connect</p>
-                    {{ settings:social_links }}<a href="{{ url }}" class="hover:text-white" target="_blank" rel="noreferrer">{{ service }}</a>{{ /settings:social_links }}
-                </nav>
+                {{ nav:footer }}
+                    <nav class="flex flex-col gap-2 text-sm">
+                        <p class="font-semibold uppercase tracking-wide text-white">{{ title }}</p>
+                        {{ children }}
+                            <a href="{{ url }}" class="hover:text-white">{{ title }}</a>
+                        {{ /children }}
+                    </nav>
+                {{ /nav:footer }}
             </div>
             <div class="border-t border-white/10 px-6 py-5 text-center text-xs text-slate-400">
                 {{ settings:footer_text }}

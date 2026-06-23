@@ -1,0 +1,10 @@
+<section class="mx-auto max-w-7xl px-6 py-16">
+    {{ if heading }}<h2 class="mb-10 text-center text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
+    {{ if images }}
+        <div class="grid grid-cols-1 gap-4 {{ if columns == '2' }}sm:grid-cols-2{{ elseif columns == '4' }}sm:grid-cols-2 lg:grid-cols-4{{ else }}sm:grid-cols-2 lg:grid-cols-3{{ /if }}">
+            {{ images }}
+                <img src="{{ url }}" alt="{{ alt }}" class="aspect-square w-full rounded-lg object-cover">
+            {{ /images }}
+        </div>
+    {{ /if }}
+</section>

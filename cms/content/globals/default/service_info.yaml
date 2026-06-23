@@ -1,0 +1,10 @@
+schedule_note: 'Every Sunday'
+service_times:
+  -
+    time: '8:30 AM'
+  -
+    time: '10:00 AM'
+  -
+    time: '11:30 AM'
+address: '5383 Mount View Road, Antioch, TN 37013'
+map_url: 'https://www.google.com/maps/search/?api=1&query=5383+Mount+View+Road+Antioch+TN+37013'

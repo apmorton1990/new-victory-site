@@ -1,0 +1,282 @@
+title: 'Page Builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Page Builder'
+      instructions: 'Build the page from reusable blocks.'
+      collapse: false
+      sets:
+        blocks:
+          display: Blocks
+          sets:
+            hero:
+              display: Hero
+              icon: hero
+              instructions: 'Full-width banner with heading and a button.'
+              fields:
+                - handle: heading
+                  field: { type: text, required: true }
+                - handle: subheading
+                  field: { type: textarea }
+                - handle: button_label
+                  field: { type: text, width: 50 }
+                - handle: button_url
+                  field: { type: text, width: 50 }
+            text:
+              display: Text
+              icon: text
+              instructions: 'Formatted rich text.'
+              fields:
+                - handle: body
+                  field: { type: markdown }
+            image:
+              display: Image
+              icon: assets
+              fields:
+                - handle: image
+                  field: { type: assets, container: assets, max_files: 1, mode: grid }
+                - handle: caption
+                  field: { type: text }
+            cta:
+              display: 'Call to Action'
+              icon: link
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: text
+                  field: { type: textarea }
+                - handle: button_label
+                  field: { type: text, width: 50 }
+                - handle: button_url
+                  field: { type: text, width: 50 }
+                - handle: style
+                  field:
+                    type: button_group
+                    default: light
+                    options: { light: Light, dark: Dark, brand: Brand }
+            feature_cards:
+              display: 'Feature Cards'
+              icon: addset
+              instructions: 'Grid of linked image cards (e.g. ministry areas).'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: columns
+                  field:
+                    type: button_group
+                    default: '3'
+                    width: 50
+                    options: { '2': 2, '3': 3, '4': 4 }
+                - handle: cards
+                  field:
+                    type: grid
+                    mode: stacked
+                    fields:
+                      - handle: image
+                        field: { type: assets, container: assets, max_files: 1, mode: grid }
+                      - handle: title
+                        field: { type: text, width: 50 }
+                      - handle: url
+                        field: { type: text, width: 50 }
+            image_text:
+              display: 'Image + Text'
+              icon: 'assets-image'
+              instructions: 'Image beside a column of text with an optional button.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: body
+                  field: { type: markdown }
+                - handle: image
+                  field: { type: assets, container: assets, max_files: 1, mode: grid }
+                - handle: image_position
+                  field:
+                    type: button_group
+                    default: left
+                    width: 50
+                    options: { left: Left, right: Right }
+                - handle: button_label
+                  field: { type: text, width: 50 }
+                - handle: button_url
+                  field: { type: text, width: 50 }
+            accordion:
+              display: 'Accordion / FAQ'
+              icon: 'list-ul'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: items
+                  field:
+                    type: grid
+                    mode: stacked
+                    fields:
+                      - handle: question
+                        field: { type: text }
+                      - handle: answer
+                        field: { type: textarea }
+            feature_list:
+              display: 'Feature List'
+              icon: 'list-ul'
+              instructions: 'Bulleted list of points or benefits.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: intro
+                  field: { type: textarea }
+                - handle: items
+                  field:
+                    type: grid
+                    mode: stacked
+                    fields:
+                      - handle: text
+                        field: { type: text }
+            leaders_feature:
+              display: 'Leaders Feature'
+              icon: user
+              instructions: 'Highlight a leader or couple with photo and bio.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: image
+                  field: { type: assets, container: assets, max_files: 1, mode: grid }
+                - handle: names
+                  field: { type: text }
+                - handle: bio
+                  field: { type: textarea }
+                - handle: button_label
+                  field: { type: text, width: 50 }
+                - handle: button_url
+                  field: { type: text, width: 50 }
+            video:
+              display: Video
+              icon: 'video'
+              instructions: 'Embed a YouTube or Vimeo video.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: video_url
+                  field: { type: text, instructions: 'Paste a YouTube or Vimeo link.' }
+                - handle: caption
+                  field: { type: text }
+            button_group:
+              display: 'Button Group'
+              icon: link
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: buttons
+                  field:
+                    type: grid
+                    mode: stacked
+                    fields:
+                      - handle: label
+                        field: { type: text, width: 50 }
+                      - handle: url
+                        field: { type: text, width: 50 }
+                      - handle: style
+                        field:
+                          type: button_group
+                          default: primary
+                          options: { primary: Primary, secondary: Secondary }
+            embed:
+              display: 'Embed / HTML'
+              icon: code
+              instructions: 'Paste an embed snippet (Church Center, Mailchimp, maps, forms).'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: code
+                  field: { type: code, mode: htmlmixed }
+            steps:
+              display: Steps
+              icon: 'list-ol'
+              instructions: 'Numbered step-by-step / next steps.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: intro
+                  field: { type: textarea }
+                - handle: items
+                  field:
+                    type: grid
+                    mode: stacked
+                    fields:
+                      - handle: title
+                        field: { type: text }
+                      - handle: description
+                        field: { type: textarea }
+            tiers:
+              display: Tiers
+              icon: 'list-ul'
+              instructions: 'Label + description rows (e.g. age groups).'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: intro
+                  field: { type: textarea }
+                - handle: items
+                  field:
+                    type: grid
+                    mode: stacked
+                    fields:
+                      - handle: label
+                        field: { type: text }
+                      - handle: description
+                        field: { type: textarea }
+            gallery:
+              display: Gallery
+              icon: 'assets-image'
+              instructions: 'Grid of images.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: columns
+                  field:
+                    type: button_group
+                    default: '3'
+                    width: 50
+                    options: { '2': 2, '3': 3, '4': 4 }
+                - handle: images
+                  field: { type: assets, container: assets, mode: grid }
+            quote:
+              display: Quote
+              icon: 'quote'
+              instructions: 'Pull quote, testimonial or scripture.'
+              fields:
+                - handle: quote
+                  field: { type: textarea }
+                - handle: attribution
+                  field: { type: text, width: 50 }
+                - handle: role
+                  field: { type: text, width: 50 }
+            location_map:
+              display: 'Location / Map'
+              icon: 'map'
+              instructions: 'Address + directions (from Service Info) with an optional embedded map.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: embed_code
+                  field: { type: code, mode: htmlmixed, instructions: 'Optional: paste a Google Maps embed iframe.' }
+            service_times:
+              display: 'Service Times'
+              icon: calendar
+              instructions: 'Service times pulled from the Service Info global.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+            team_grid:
+              display: 'Team Grid'
+              icon: users
+              instructions: 'Grid of people from the Staff collection.'
+              fields:
+                - handle: heading
+                  field: { type: text }
+                - handle: columns
+                  field:
+                    type: button_group
+                    default: '3'
+                    width: 50
+                    options: { '2': 2, '3': 3, '4': 4 }

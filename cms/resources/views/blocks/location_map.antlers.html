@@ -1,0 +1,13 @@
+<section class="mx-auto max-w-5xl px-6 py-16">
+    {{ if heading }}<h2 class="mb-8 text-center text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
+    <div class="grid gap-8 md:grid-cols-2 md:items-center">
+        <div>
+            <p class="text-lg font-semibold text-brand">Visit us</p>
+            {{ if service_info:address }}<p class="mt-2 text-slate-600">{{ service_info:address }}</p>{{ /if }}
+            {{ if service_info:map_url }}
+                <a href="{{ service_info:map_url }}" target="_blank" rel="noreferrer" class="mt-4 inline-block rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover">Get Directions</a>
+            {{ /if }}
+        </div>
+        {{ if embed_code }}<div class="overflow-hidden rounded-xl">{{ embed_code }}</div>{{ /if }}
+    </div>
+</section>

@@ -1,0 +1,11 @@
+<section class="bg-brand text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold">{{ heading ?? 'Service Times' }}</h2>
+        {{ if service_info:schedule_note }}<p class="mt-2 text-slate-300">{{ service_info:schedule_note }}</p>{{ /if }}
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            {{ service_info:service_times }}
+                <span class="rounded-full bg-white/10 px-6 py-3 text-xl font-semibold">{{ time }}</span>
+            {{ /service_info:service_times }}
+        </div>
+    </div>
+</section>

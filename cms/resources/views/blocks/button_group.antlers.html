@@ -1,0 +1,8 @@
+<section class="mx-auto max-w-4xl px-6 py-12 text-center">
+    {{ if heading }}<h2 class="mb-6 text-2xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
+    <div class="flex flex-wrap items-center justify-center gap-4">
+        {{ buttons }}
+            <a href="{{ url }}" class="inline-block rounded-full px-7 py-3 text-sm font-semibold transition {{ if style == 'secondary' }}border border-brand text-brand hover:bg-brand hover:text-white{{ else }}bg-accent text-white hover:bg-accent-hover{{ /if }}">{{ label }}</a>
+        {{ /buttons }}
+    </div>
+</section>

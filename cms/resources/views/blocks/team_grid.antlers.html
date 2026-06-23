@@ -1,0 +1,17 @@
+<section class="mx-auto max-w-7xl px-6 py-16">
+    {{ if heading }}<h2 class="mb-10 text-center text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
+    <div class="grid grid-cols-1 gap-8 {{ if columns == '2' }}sm:grid-cols-2{{ elseif columns == '4' }}sm:grid-cols-2 lg:grid-cols-4{{ else }}sm:grid-cols-2 lg:grid-cols-3{{ /if }}">
+        {{ collection:staff }}
+            <div class="flex flex-col items-center text-center">
+                {{ if photo }}
+                    {{ photo }}<img src="{{ url }}" alt="" class="mb-4 h-32 w-32 rounded-full object-cover">{{ /photo }}
+                {{ else }}
+                    <div class="mb-4 h-32 w-32 rounded-full bg-mist"></div>
+                {{ /if }}
+                <h3 class="text-lg font-semibold text-brand">{{ title }}</h3>
+                {{ if role }}<p class="text-sm font-medium text-accent">{{ role }}</p>{{ /if }}
+                {{ if bio }}<p class="mt-2 text-sm text-slate-600">{{ bio }}</p>{{ /if }}
+            </div>
+        {{ /collection:staff }}
+    </div>
+</section>

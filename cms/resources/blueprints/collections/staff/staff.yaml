@@ -1,0 +1,28 @@
+title: 'Staff Member'
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: title
+            field:
+              type: text
+              display: Name
+              required: true
+              validate:
+                - required
+          - handle: role
+            field:
+              type: text
+          - handle: photo
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              mode: grid
+          - handle: bio
+            field:
+              type: textarea
+          - handle: email
+            field:
+              type: text

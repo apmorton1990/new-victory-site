@@ -1,0 +1,14 @@
+<section class="mx-auto max-w-6xl px-6 py-16">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+        <div class="{{ if image_position == 'right' }}md:order-2{{ else }}md:order-1{{ /if }}">
+            {{ if image }}{{ image }}<img src="{{ url }}" alt="" class="w-full rounded-2xl object-cover">{{ /image }}{{ /if }}
+        </div>
+        <div class="{{ if image_position == 'right' }}md:order-1{{ else }}md:order-2{{ /if }}">
+            {{ if heading }}<h2 class="text-3xl font-bold text-brand">{{ heading }}</h2>{{ /if }}
+            <div class="prose prose-slate mt-4 max-w-none prose-headings:text-brand prose-a:text-accent">{{ body }}</div>
+            {{ if button_label && button_url }}
+                <a href="{{ button_url }}" class="mt-6 inline-block rounded-full bg-accent px-7 py-3 text-sm font-semibold text-white transition hover:bg-accent-hover">{{ button_label }}</a>
+            {{ /if }}
+        </div>
+    </div>
+</section>

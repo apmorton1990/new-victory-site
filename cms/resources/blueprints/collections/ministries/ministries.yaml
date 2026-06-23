@@ -1,0 +1,48 @@
+title: Ministry
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          - handle: summary
+            field:
+              type: textarea
+              instructions: 'Short description used in listings/cards.'
+          - handle: image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              mode: grid
+          - handle: age_range
+            field:
+              type: text
+              instructions: 'e.g. "Birth – 5th grade"'
+          - handle: leader
+            field:
+              type: entries
+              collections:
+                - staff
+              max_items: 1
+          - import: page_builder
+  sidebar:
+    display: Sidebar
+    sections:
+      - fields:
+          - handle: slug
+            field:
+              type: slug
+              localizable: true
+              required: true
+          - handle: seo_title
+            field:
+              type: text
+          - handle: seo_description
+            field:
+              type: textarea
